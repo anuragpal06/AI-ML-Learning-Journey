@@ -36,3 +36,8 @@ flat_array = matrix.flatten()
 
 print("\nFlattened Array:")
 print(flat_array)
+
+# Problem 4: Statistical Operations
+
+flat_array = np.random.randint(1, 101, size=12) 
+print("\nRandom Array for Statistical Operations:")
