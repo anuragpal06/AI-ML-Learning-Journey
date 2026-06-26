@@ -8,7 +8,7 @@ print("Original Array:")
 print(arr)
 
 print("\nShape:", arr.shape)
-print("Size:", arr.size)
+print("Size:", arr.size) 
 print("Data Type:", arr.dtype)
 
 # Problem 2: Reshaping and Slicing
