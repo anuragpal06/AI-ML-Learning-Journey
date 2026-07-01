@@ -15,22 +15,24 @@ df = pd.DataFrame(data)
 print("Original DataFrame:\n")
 print(df)
 
-# Problem 1
+# Problem 1: Multi-Level Grouping
 
-print("\nAverage Scores by Class:\n")
+print("\nAverage Scores by Class and Gender:\n")
 
-class_average = df.groupby("Class")[["Math_Score", "Science_Score"]].mean()
+grouped = df.groupby(["Class", "Gender"])[["Math_Score", "Science_Score"]].mean()
 
-print(class_average)
+print(grouped)
 
-# Problem 2
+# Problem 2: Pivot Table
 
-print("\nSummary by Gender:\n")
+print("\nPivot Table (Maximum Science Score):\n")
 
-gender_summary = df.groupby("Gender").agg({
-    "Name": "count",
-    "Math_Score": "max",
-    "Science_Score": "min"
-})
+pivot = pd.pivot_table(
+    df,
+    index="Class",
+    columns="Gender",
+    values="Science_Score",
+    aggfunc="max"
+)
 
-print(gender_summary)
+print(pivot)
